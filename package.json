@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "postinstall": "pulp dep install",
-    "build": "pulp browserify --to dist/app.js"
+    "build": "pulp browserify --optimise --to dist/app.js"
   },
   "dependencies": {
     "virtual-dom": "^2.1.1"
