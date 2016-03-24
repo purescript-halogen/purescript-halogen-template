@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "postinstall": "pulp dep install",
+    "postinstall": "bower install",
     "build": "pulp browserify --optimise --to dist/app.js",
     "watch": "pulp -w browserify --to dist/app.js"
   },
@@ -9,7 +9,7 @@
     "virtual-dom": "^2.1.1"
   },
   "devDependencies": {
-    "pulp": "^7.0.0",
+    "pulp": "^8.1.0",
     "purescript": "^0.7.6"
   }
 }
