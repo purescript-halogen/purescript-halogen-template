@@ -7,7 +7,7 @@ import Control.Monad.Eff (Eff())
 import Control.Monad.Eff.Exception (throwException)
 
 import Halogen
-import Halogen.Util (appendToBody, onLoad)
+import Halogen.Util (awaitBody)
 import qualified Halogen.HTML.Indexed as H
 import qualified Halogen.HTML.Events.Indexed as E
 
@@ -19,7 +19,7 @@ initialState :: State
 initialState = { on: false }
 
 ui :: forall g. (Functor g) => Component State Query g
-ui = component render eval
+ui = component { render, eval }
   where
 
   render :: State -> ComponentHTML Query
@@ -45,5 +45,5 @@ ui = component render eval
 
 main :: Eff (HalogenEffects ()) Unit
 main = runAff throwException (const (pure unit)) $ do
-  app <- runUI ui initialState
-  onLoad $ appendToBody app.node
+  body <- awaitBody
+  runUI ui initialState body
