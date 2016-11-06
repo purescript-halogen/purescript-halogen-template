@@ -9,7 +9,7 @@
     "dist"
   ],
   "dependencies": {
-    "purescript-console": "^1.0.0",
-    "purescript-halogen": "^0.11.0"
+    "purescript-console": "^2.0.0",
+    "purescript-halogen": "^0.12.0"
   }
 }
