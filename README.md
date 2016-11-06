@@ -1,6 +1,6 @@
 # purescript-halogen-template
 
-[![Dependency Status](https://www.versioneye.com/user/projects/576ebffc6f9c59003d351060/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/576ebffc6f9c59003d351060)
+[![Dependency status](https://img.shields.io/librariesio/github/slamdata/purescript-halogen-template.svg)](https://libraries.io/github/slamdata/purescript-halogen-template)
 
 This is a template for starting a fresh project using the [purescript-halogen](https://github.com/slamdata/purescript-halogen) library for declarative user interfaces.
 
