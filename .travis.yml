@@ -7,11 +7,3 @@ install:
   - npm install
 script:
   - npm run build
-after_success:
-- >-
-  test $TRAVIS_TAG &&
-  node_modules/.bin/psc-publish > .pursuit.json &&
-  curl -X POST http://pursuit.purescript.org/packages \
-    -d @.pursuit.json \
-    -H 'Accept: application/json' \
-    -H "Authorization: token ${GITHUB_TOKEN}"
