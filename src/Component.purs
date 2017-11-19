@@ -1,6 +1,6 @@
 module Component where
 
-import Prelude
+import Prelude (type (~>), Unit, Void, not, discard, pure, const)
 
 import Data.Maybe (Maybe(..))
 
@@ -29,7 +29,7 @@ component =
   render state =
     HH.div_
       [ HH.h1_
-          [ HH.text "Hello world!" ]
+          [ HH.text "Hello, world!" ]
       , HH.p_
           [ HH.text "Why not toggle this button:" ]
       , HH.button
