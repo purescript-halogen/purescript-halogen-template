@@ -36,7 +36,7 @@ component =
           [ HE.onClick (HE.input_ ToggleState) ]
           [ HH.text
               if not state.on
-              then "Don't push me"
+              then "Don't push"
               else "I said don't push me!"
           ]
       ]

@@ -1,13 +1,24 @@
 module Main where
 
 import Prelude
+
+import Component (component)
+import Control.Monad.Aff (launchAff_)
+import Control.Monad.Aff.Console (log)
 import Control.Monad.Eff (Eff)
 import Halogen.Aff as HA
 import Halogen.VDom.Driver (runUI)
 
-import Component (component)
+rerunUI body = launchAff_ do
+  log "rerunUI"
+  run body
 
-main :: Eff (HA.HalogenEffects ()) Unit
+run body = do
+  log "run"
+  runUI component unit body
+
+-- main :: Eff (HA.HalogenEffects ()) Unit
 main = HA.runHalogenAff do
   body <- HA.awaitBody
-  runUI component unit body
+  log "main"
+  run body
