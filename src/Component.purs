@@ -44,5 +44,5 @@ component =
   eval :: Query ~> H.ComponentDSL State Query Void m
   eval = case _ of
     ToggleState next -> do
-      H.modify (\state -> { on: not state.on })
+      _ <- H.modify (\state -> { on: not state.on })
       pure next
