@@ -3,12 +3,13 @@
   "scripts": {
     "build": "pulp build --to dist/app.js",
     "watch": "pulp -w build --to dist/app.js",
-    "watch-fast": "webpack --entry ./entry.js --output-filename dist/app.js --progress --watch"
+    "watch-fast": "webpack --mode=development --entry ./entry.js --output-path ./dist --output-filename app.js --progress --watch"
   },
   "devDependencies": {
-    "pulp": "^12.0.1",
-    "purescript": "^0.11.6",
-    "purescript-psa": "^0.5.1",
-    "webpack": "^3.6.0"
+    "pulp": "^12.3.0",
+    "purescript": "^0.12.0",
+    "purescript-psa": "^0.7.2",
+    "webpack": "^4.16.2",
+    "webpack-cli": "^3.1.0"
   }
 }
