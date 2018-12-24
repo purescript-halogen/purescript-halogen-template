@@ -1,0 +1,23 @@
+version: '2'
+
+vars:
+  PS: ynishi/purescript-docker
+  ARGS: --rm -it -v $(pwd):/home/node/app -u root {{.PS}}
+
+tasks:
+  ps-cli:
+    desc: shell in purescript
+    cmds:
+      - docker run {{.ARGS}} bash
+  build:
+    desc: run build to dist/app.js
+    cmds:
+      - docker run {{.ARGS}} yarn run build
+  repl:
+    desc: run repl by pulp
+    cmds:
+      - docker run {{.ARGS}} pulp repl
+  psc:
+    desc: psc-package
+    cmds:
+      - docker run {{.ARGS}} psc-package $sub $pkg
