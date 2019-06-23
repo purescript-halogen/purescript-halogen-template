@@ -25,7 +25,7 @@ component =
     initialState :: State
     initialState = { on: false }
 
-    render :: State -> HH.HTML (ComponentSlot HH.HTML () m Action) Action
+    render :: State -> HH.HTML (H.ComponentSlot HH.HTML () m Action) Action
     render state =
       HH.div_
         [ HH.h1_
