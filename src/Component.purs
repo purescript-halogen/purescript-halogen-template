@@ -21,25 +21,25 @@ component =
     }
   where
 
-    initialState :: State
-    initialState = { on: false }
+  initialState :: State
+  initialState = { on: false }
 
-    render :: State -> HH.HTML (H.ComponentSlot HH.HTML () m Action) Action
-    render state =
-      HH.div_
-        [ HH.h1_
-            [ HH.text "Hello world!" ]
-        , HH.p_
-            [ HH.text "Why not toggle this button:" ]
-        , HH.button
-            [ HE.onClick (\_ -> Just ToggleState) ]
-            [ HH.text
-                if not state.on
-                then "Don't push me"
-                else "I said don't push me!"
-            ]
-        ]
+  render :: State -> HH.HTML (H.ComponentSlot HH.HTML () m Action) Action
+  render state =
+    HH.div_
+      [ HH.h1_
+          [ HH.text "Hello world!" ]
+      , HH.p_
+          [ HH.text "Why not toggle this button:" ]
+      , HH.button
+          [ HE.onClick (\_ -> Just ToggleState) ]
+          [ HH.text
+              if not state.on
+              then "Don't push me"
+              else "I said don't push me!"
+          ]
+      ]
 
-    handleAction :: Action -> H.HalogenM State Action () Void m Unit
-    handleAction = case _ of
-      ToggleState -> void $ H.modify (\state -> { on: not state.on })
+  handleAction :: Action -> H.HalogenM State Action () Void m Unit
+  handleAction = case _ of
+    ToggleState -> void $ H.modify (\state -> { on: not state.on })
