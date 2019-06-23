@@ -4,7 +4,6 @@ import Prelude
 
 import Data.Const (Const)
 import Data.Maybe (Maybe(..))
-import Halogen (ComponentSlot)
 import Halogen as H
 import Halogen.HTML as HH
 import Halogen.HTML.Events as HE
