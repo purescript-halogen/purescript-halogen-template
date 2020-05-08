@@ -1,72 +1,64 @@
-# purescript-halogen-template
+# Halogen Template
 
-This is a template for starting a fresh project using the [purescript-halogen](https://github.com/slamdata/purescript-halogen) library for declarative user interfaces.
+This is a template for starting a fresh project with the [Halogen](https://github.com/slamdata/purescript-halogen) library for writing declarative, type-safe user interfaces.
 
-## Prerequisites
+You can learn more about Halogen with these resources:
 
-This guide assumes you already have Git and Node.js installed with `npm` somewhere on your path.
+- The [Halogen documentation](https://github.com/purescript-halogen/purescript-halogen/tree/master/docs), which includes a quick start guide and a concepts reference.
+- The [Learn Halogen](https://github.com/jordanmartinez/learn-halogen) learning repository.
+- The [Real World Halogen](https://github.com/thomashoneyman/purescript-halogen-realworld) application and guide.
+- The [API documentation](https://pursuit.purescript.org/packages/purescript-halogen) on Pursuit
 
-In the PureScript ecosystem [Bower](http://bower.io/) is currently the most commonly used package manager and we'll be relying on it for this project, so if you don't already have it, you can install it like this:
-
-``` shell
-npm install --global bower
-```
+You can chat with other Halogen users on the [PureScript Discourse](https://discourse.purescript.org), or join the [Functional Programming Slack](https://functionalprogramming.slack.com) ([invite link](https://fpchat-invite.herokuapp.com/)) in the `#purescript` and `#purescript-beginners` channels.
 
 ## Getting started
 
-First clone the repo and step into it:
+**Prerequisites:** This template assumes you already have Git and Node.js installed with `npm` somewhere on your path.
 
-``` shell
-git clone https://github.com/slamdata/purescript-halogen-template.git my-halogen-project
-cd my-halogen-project
+First, clone the repository and step into it:
+
+```sh
+git clone https://github.com/purescript-halogen/purescript-halogen-template.git halogen-project
+cd halogen-project
 ```
 
-If you don't already have a global installation of the PureScript compiler and [Pulp](https://github.com/bodil/pulp) (or you want a local installation with the appropriate versions) you can run:
+Then, install the PureScript compiler, the [Spago](https://github.com/purescript/spago) package manager and build tool, and [Webpack](https://github.com/webpack/webpack) bundler locally:
 
-``` shell
+```shell
 npm install
 ```
 
-Finally you'll need to install the PureScript library dependencies for this project with Bower:
-
-``` shell
-bower install
-```
+This will automatically trigger Spago to install the PureScript library dependencies for this project.
 
 ## Building
 
-The project can now be built with:
+You can now build the PureScript source code with:
 
-``` shell
+```sh
+# An alias for `spago build`
 npm run build
 ```
 
-This will build the PureScript source code and produce a bundled JS file as `dist/app.js`.
+You can produce a bundled JS file you can run in the browser with:
 
-This is an alias for the Pulp command:
-
-``` shell
-pulp build --to dist/app.js
+```sh
+# An alias for `spago bundle-app --to dist/app.js`
+npm run bundle
 ```
 
-If you open `dist/index.html` you should now have a basic working Halogen app.
+This deposits a bundled JS file named `app.js` in the `dist` directory. You can view your running Halogen app by opening the `dist/index.html` file.
 
-You can also use the command:
+You can also start a process which watches the source files and rebuilds any time they modified (:warning: You will need to refresh the page to see your changes in the `index.html` file):
 
-``` shell
-npm run watch
+```shell
+# An alias for `spago bundle-app --watch --to dist/app.js`
+npm run bundle:watch
 ```
 
-To start a process that will watch the source files and trigger a reload whenever they are modified. Alternatively...
+Alternatively, if you use an editor that supports `purs ide` or if you are running [`pscid`](https://github.com/kRITZCREEK/pscid), then you can get near-instant builds of the app while you work:
 
-## Fast watching with `purs ide`
-
-If you're using an editor that supports `purs ide` or running [`pscid`](https://github.com/kRITZCREEK/pscid) there's an option for getting near-instant builds of the app while you work on it:
-
-``` shell
-npm run watch-fast
+```sh
+npm run bundle:watch-fast
 ```
-
-This will start a watch process that uses [Webpack](https://github.com/webpack/webpack) to rebundle the app whenever the _output_ files are changed. Since `purs ide` rebuilds modules on save, this means you can use this much faster bundle-only rebuild script.
 
 :warning: `purs ide` only rebuilds one module at a time, so sometimes the bundle will end up in an inconsistent state, resulting in runtime errors. This occurs when a change is made in one module that breaks other modules that depend on it. The solution is to run a full build when a change like this is made, as the compiler will force you to resolve those errors.
