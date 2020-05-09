@@ -51,7 +51,7 @@ This deposits a bundled JS file named `app.js` in the `dist` directory. You can 
 Alternatively, if you use an editor that supports `purs ide` or if you are running [`pscid`](https://github.com/kRITZCREEK/pscid), then you can get near-instant builds of the app while you work:
 
 ```sh
-npm run bundle:watch-fast
+npm run bundle:watch
 ```
 
 :warning: `purs ide` only rebuilds one module at a time, so sometimes the bundle will end up in an inconsistent state, resulting in runtime errors. This occurs when a change is made in one module that breaks other modules that depend on it. The solution is to run a full build when a change like this is made, as the compiler will force you to resolve those errors.
