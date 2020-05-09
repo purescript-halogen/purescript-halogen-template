@@ -48,13 +48,6 @@ npm run bundle
 
 This deposits a bundled JS file named `app.js` in the `dist` directory. You can view your running Halogen app by opening the `dist/index.html` file.
 
-You can also start a process which watches the source files and rebuilds any time they modified (:warning: You will need to refresh the page to see your changes in the `index.html` file):
-
-```shell
-# An alias for `spago bundle-app --watch --to dist/app.js`
-npm run bundle:watch
-```
-
 Alternatively, if you use an editor that supports `purs ide` or if you are running [`pscid`](https://github.com/kRITZCREEK/pscid), then you can get near-instant builds of the app while you work:
 
 ```sh

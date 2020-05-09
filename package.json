@@ -1,13 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "postinstall": "spago install",
     "test": "spago test",
     "build": "spago build",
     "bundle": "spago bundle-app --to dist/app.js",
-    "watch": "spago build --watch",
-    "bundle:watch": "spago bundle-app --watch --to dist/app.js",
-    "bundle:watch-fast": "webpack --mode=development --entry ./entry.js --output-path ./dist --output-filename app.js --progress --watch"
+    "bundle:watch": "webpack --mode=development --entry ./entry.js --output-path ./dist --output-filename app.js --progress --watch"
   },
   "devDependencies": {
     "purescript": "^0.13.6",
