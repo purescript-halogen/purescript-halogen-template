@@ -7,7 +7,7 @@
     "bundle:watch": "webpack --mode=development --entry ./entry.js --output-path ./dist --output-filename app.js --progress --watch"
   },
   "devDependencies": {
-    "purescript": "^0.13.6",
+    "purescript": "^0.13.8",
     "purescript-psa": "^0.7.3",
     "spago": "^0.15.2",
     "webpack": "^4.43.0",
