@@ -1,7 +1,7 @@
 # Halogen Template
 
 ### Quick Start
-```
+```sh
 git clone https://github.com/purescript-halogen/purescript-halogen-template.git halogen-project
 cd halogen-project
 npm install -g purescript spago parcel
@@ -11,7 +11,7 @@ npm run serve
 
 ### Introduction
 
-This is a template for starting a fresh project with the [Halogen](https://github.com/purescript-halogen/purescript-halogen) library for writing declarative, type-safe user interfaces. This template mimics the introductory example of the [official React Hooks documentation](https://reactjs.org/docs/hooks-intro.html).
+This is a template for starting a fresh project with the [Halogen](https://github.com/purescript-halogen/purescript-halogen) library for writing declarative, type-safe user interfaces.
 
 You can learn more about Halogen with these resources:
 
@@ -39,7 +39,7 @@ cd halogen-project
 
 Then, install the PureScript compiler, the [Spago](https://github.com/purescript/spago) package manager and build tool, and the [Parcel](https://github.com/parcel-bundler/parcel) bundler globally:
 
-```
+```sh
 npm install -g purescript spago parcel
 ```
 
@@ -75,14 +75,14 @@ If your workflow does not support automatic recompilation, or if you add, remove
 ### Production
 
 When you are ready to create a minified bundle for deployment, run the following command:
-```
+```sh
 npm run build-prod
 ```
 
 Parcel output appears in the `./dist/` directory.
 
 You can test the production output locally with a tool like [`http-server`](https://github.com/http-party/http-server#installation). It seems that `parcel` should also be able to accomplish this, but it unfortunately will only serve development builds locally.
-```
+```sh
 npm install -g http-server
 http-server dist -o
 ```
