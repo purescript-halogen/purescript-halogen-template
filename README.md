@@ -4,7 +4,7 @@
 ```sh
 git clone https://github.com/purescript-halogen/purescript-halogen-template.git halogen-project
 cd halogen-project
-npm install -g purescript spago parcel
+npm install
 npm run build
 npm run serve
 ```
@@ -37,14 +37,17 @@ git clone https://github.com/purescript-halogen/purescript-halogen-template.git 
 cd halogen-project
 ```
 
-Then, install the PureScript compiler, the [Spago](https://github.com/purescript/spago) package manager and build tool, and the [Parcel](https://github.com/parcel-bundler/parcel) bundler globally:
+Then, install the PureScript compiler, the [Spago](https://github.com/purescript/spago) package manager and build tool, and the [Parcel](https://github.com/parcel-bundler/parcel) bundler. You may either install PureScript tooling _globally_, to reduce duplicated `node_modules` across projects, or _locally_, so that each project uses specific versions of the tools.
 
+To install the toolchain globally:
 ```sh
 npm install -g purescript spago parcel
 ```
 
-If you'd prefer to install tools on a per-project basis (rather than globally), you may run `npm install` instead. See [this guide](https://github.com/purescript-templates/docs/blob/master/versioned-toolchain.md) for more information on configuring a local toolchain.
-
+To install the toolchain locally (reads `devDependencies` from `package.json`):
+```sh
+npm install
+```
 
 ### Building
 
