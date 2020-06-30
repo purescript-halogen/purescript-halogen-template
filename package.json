@@ -1,16 +1,13 @@
 {
   "private": true,
-  "scripts": {
-    "test": "spago test",
-    "build": "spago build",
-    "bundle": "spago bundle-app --to dist/app.js",
-    "bundle:watch": "webpack --mode=development --entry ./entry.js --output-path ./dist --output-filename app.js --progress --watch"
-  },
   "devDependencies": {
+    "parcel": "^1.12.4",
     "purescript": "^0.13.8",
-    "purescript-psa": "^0.7.3",
-    "spago": "^0.15.2",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "spago": "^0.15.3"
+  },
+  "scripts": {
+    "build": "spago build",
+    "serve": "parcel dev/index.html --open",
+    "build-prod": "mkdir -p prod && cp dev/index.html prod/ && rm -rf dist && spago bundle-app --to prod/index.js && parcel build prod/index.html"
   }
 }
