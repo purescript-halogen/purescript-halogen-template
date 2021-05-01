@@ -1,6 +1,7 @@
 {
   "private": true,
   "devDependencies": {
+    "concurrently": "^6.0.2",
     "parcel": "1.12.3",
     "purescript": "^0.14.0",
     "spago": "^0.19.1"
@@ -9,6 +10,8 @@
     "build": "spago build",
     "test": "spago test",
     "serve": "parcel dev/index.html --open",
+    "start": "concurrently \"npm run serve\" \"npm run watch-build\"",
+    "watch-build": "spago build --watch",
     "build-prod": "mkdir -p prod && cp dev/index.html prod/ && rm -rf dist && spago bundle-app --to prod/index.js && parcel build prod/index.html"
   }
 }
