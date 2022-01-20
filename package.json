@@ -1,9 +1,8 @@
 {
   "private": true,
   "devDependencies": {
-    "parcel": "1.12.3",
-    "purescript": "^0.14.0",
-    "spago": "^0.19.1"
+    "parcel": "^2.2.1",
+    "spago": "^0.20.3"
   },
   "scripts": {
     "build": "spago build",
