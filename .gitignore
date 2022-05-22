@@ -14,3 +14,4 @@ dist/
 prod/*
 
 index.js
+prod
