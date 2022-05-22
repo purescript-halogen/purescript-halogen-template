@@ -24,7 +24,7 @@ You can chat with other Halogen users on the [PureScript Discourse](https://disc
 
 If you notice any problems with the below setup instructions, or have suggestions on how to make the new-user experience any smoother, please create an issue or pull-request.
 
-Compatible with PureScript compiler 13.x
+Compatible with PureScript compiler 15.x
 
 ### Initial Setup
 
@@ -37,7 +37,7 @@ git clone https://github.com/purescript-halogen/purescript-halogen-template.git 
 cd halogen-project
 ```
 
-Then, install the PureScript compiler, the [Spago](https://github.com/purescript/spago) package manager and build tool, and the [Parcel](https://github.com/parcel-bundler/parcel) bundler. You may either install PureScript tooling _globally_, to reduce duplicated `node_modules` across projects, or _locally_, so that each project uses specific versions of the tools.
+Then, install the PureScript compiler, the [Spago](https://github.com/purescript/spago) package manager and build tool, and the [Parcel](https://github.com/parcel-bundler/parcel) bundler. You may either install PureScript tooling _globally_ (possibly using `sudo` on Linux), to reduce duplicated `node_modules` across projects, or _locally_, so that each project uses specific versions of the tools.
 
 To install the toolchain globally:
 ```sh
